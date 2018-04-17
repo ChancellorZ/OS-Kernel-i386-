@@ -26,15 +26,35 @@ int kern_entry()
 
     return 0;
 }
-*/
+
 #include "console.h"
 
 int kern_entry()
 {
+	char *cstr="happy the day";
 	console_clear();
 	console_write_color("Hello, OS kernel 2.0!\n", rc_black, rc_green);
- 	
+ 	while(true)
+	{
+		scanf("%c",cstr);
+		console_write(cstr);
+	}
 	return 0;
 }
+*/
 
+#include "console.h"
+#include "debug.h"
 
+int kern_entry()
+{
+	init_debug();
+
+	console_clear();
+
+	printk_color(rc_black, rc_green, "Hello ,OS Kernle 2.1!\n");
+
+	panic("test");
+
+	return 0;
+}
