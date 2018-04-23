@@ -42,7 +42,7 @@ int kern_entry()
 	return 0;
 }
 */
-
+/*
 #include "console.h"
 #include "debug.h"
 
@@ -58,3 +58,20 @@ int kern_entry()
 
 	return 0;
 }
+*/
+#include "gdt.h"
+#include "console.h"
+#include "debug.h"
+
+int kern_entry()
+{
+   	init_debug();
+	init_gdt();
+
+   	console_clear();
+	printk_color(rc_black, rc_green, "Hello ,OS Kernle 2.2!\n");
+	
+	panic("test");	
+	return 0;
+}
+
