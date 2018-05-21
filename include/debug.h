@@ -5,11 +5,11 @@
 #include "vargs.h"
 #include "elf.h"
 
-#define assert(x, info)				\
-		do{								\
-				if(!(x)){				\
-						panic(info);	\
-				}						\
+#define assert(x, info)						\
+		do{									\
+				if(!(x)){					\
+						panic(info);		\
+				}							\
 		} while (0)						
 
 // 编译期间静态检测
